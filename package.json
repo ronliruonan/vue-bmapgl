@@ -2,8 +2,19 @@
   "name": "vue-bmapgl",
   "version": "0.1.0",
   "description": "基于百度地图JavaScript GL版API封装的Vue2组件库",
+  "author": "",
+  "scripts": {
+    "build": "rm -rf dist && tsc --build tsconfig.build.json",
+    "deploy": "gh-pages -d styleguide",
+    "build:doc": "rm -rf styleguide && styleguidist build && npm run replace",
+    "deploy:bos": "sh upload.sh",
+    "page": "npm run build:doc && npm run deploy:bos && npm run deploy",
+    "replace": "node rsg-config/replace.cdn.js",
+    "start": "styleguidist server",
+    "styleguide": "vue-cli-service styleguidist",
+    "styleguide:build": "vue-cli-service styleguidist:build"
+  },
   "main": "dist/index.js",
-  "types": "dist/types/index.d.ts",
   "files": [
     "dist",
     "types",
@@ -11,27 +22,6 @@
     "README.md",
     "LICENSE"
   ],
-  "scripts": {
-    "start": "styleguidist server",
-    "build": "rm -rf dist && tsc --build tsconfig.build.json",
-    "build:doc": "rm -rf styleguide && styleguidist build && npm run replace",
-    "replace": "node rsg-config/replace.cdn.js",
-    "deploy": "gh-pages -d styleguide",
-    "deploy:bos": "sh upload.sh",
-    "page": "npm run build:doc && npm run deploy:bos && npm run deploy",
-    "styleguide": "vue-cli-service styleguidist",
-    "styleguide:build": "vue-cli-service styleguidist:build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ronliruonan/vue-bmapgl.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ronliruonan/vue-bmapgl/issues"
-  },
-  "homepage": "https://github.com/ronliruonan/vue-bmapgl#readme",
   "dependencies": {
     "mapvgl": "latest",
     "shallowequal": "^1.1.0"
@@ -58,9 +48,19 @@
     "mapvgl": ">=1.0.0-beta.146",
     "vue": "^2.6.10"
   },
+  "bugs": {
+    "url": "https://github.com/ronliruonan/vue-bmapgl/issues"
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "homepage": "https://github.com/ronliruonan/vue-bmapgl#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronliruonan/vue-bmapgl.git"
+  },
+  "types": "dist/types/index.d.ts"
 }
