@@ -1,0 +1,49 @@
+{
+  "name": "vue-bmapgl",
+  "version": "0.1.0",
+  "description": "基于百度地图JavaScript GL版API封装的Vue2组件库",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "types",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "styleguidist server",
+    "build": "rm -rf dist && tsc --build tsconfig.build.json",
+    "build:doc": "rm -rf styleguide && styleguidist build && npm run replace",
+    "replace": "node rsg-config/replace.cdn.js",
+    "deploy": "gh-pages -d styleguide",
+    "deploy:bos": "sh upload.sh",
+    "page": "npm run build:doc && npm run deploy:bos && npm run deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronliruonan/vue-bmapgl.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ronliruonan/vue-bmapgl/issues"
+  },
+  "homepage": "https://github.com/ronliruonan/vue-bmapgl#readme",
+  "dependencies": {
+    "mapvgl": "latest",
+    "shallowequal": "^1.1.0"
+  },
+  "devDependencies": {
+    "vue": "^2.6.14"
+  },
+  "peerDependencies": {
+    "mapvgl": ">=1.0.0-beta.146",
+    "vue": "^2.6.10"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
