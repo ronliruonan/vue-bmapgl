@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["esnext", "dom"],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "module": "esnext",
     "esModuleInterop": true,
     "moduleResolution": "node",
@@ -26,6 +29,14 @@
     "allowJs": true,
     "isolatedModules": true
   },
-  "include": ["./src/**/*.tsx", "./types/**/*.ts"],
-  "exclude": ["node_modules", "dist", "build", "./types/**/bmapgl-tests.ts"]
+  "include": [
+    "./src/**/*.tsx",
+    "./types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "./types/**/bmapgl-tests.ts"
+  ]
 }
