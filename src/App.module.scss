@@ -1,0 +1,15 @@
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  color: red;
+}
+
+.app {
+  background: lightblue;
+
+  // global 达到穿透效果
+  :global(.index-page) {
+    color: blue;
+  }
+}
