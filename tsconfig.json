@@ -3,7 +3,9 @@
     "target": "es5",
     "lib": [
       "esnext",
-      "dom"
+      "dom",
+      "dom.iterable",
+      "scripthost"
     ],
     "module": "esnext",
     "esModuleInterop": true,
@@ -21,6 +23,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "strict": true,
+    "noImplicitAny": false,
     "strictPropertyInitialization": false,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
